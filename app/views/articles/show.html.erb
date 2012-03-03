@@ -1,0 +1,15 @@
+<%= render @article %>
+
+<h3>Comments</h3>
+<div id="comments">
+  <%= render @article.comments %>
+</div>
+
+<%= render :file => 'comments/new' %>
+
+
+
+<label> Comment as </label>
+<%= f.select :user_id, User.all.map {|user| [user.name, user.id]} %>
+<%= f.submit value: "Submit"%>
+<% end %>
